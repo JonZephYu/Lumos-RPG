@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 81794657144594038}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,6 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4497110197723160}
   - component: {fileID: 114861390474255874}
+  - component: {fileID: 114190904086476996}
+  - component: {fileID: 114178319570087018}
   m_Layer: 0
   m_Name: Camera Arm
   m_TagString: Untagged
@@ -64,13 +66,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430063610220656}
-  m_LocalRotation: {x: 0.25880924, y: 0.008429207, z: -0.0022585995, w: 0.96588904}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalRotation: {x: 0.3206834, y: 0.008265641, z: -0.0027985685, w: 0.94714624}
+  m_LocalPosition: {x: 0, y: 7.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4497110197723160}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.41, y: 1, z: 0}
 --- !u!20 &20769625173062472
 Camera:
   m_ObjectHideFlags: 1
@@ -118,6 +120,30 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430063610220656}
   m_Enabled: 1
+--- !u!114 &114178319570087018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665790600834830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65013be7558f8eb4dad0594be8367e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114190904086476996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665790600834830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d354f3716c4a0449e1039cfe6c82e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerPriorities: 0900000008000000
+  distanceToBackground: 100
 --- !u!114 &114861390474255874
 MonoBehaviour:
   m_ObjectHideFlags: 1
