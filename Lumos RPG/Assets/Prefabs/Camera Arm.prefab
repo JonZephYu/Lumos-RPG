@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4769337349190826}
   - component: {fileID: 20769625173062472}
   - component: {fileID: 81794657144594038}
+  - component: {fileID: 114519913797485140}
+  - component: {fileID: 114521322652869238}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -37,8 +39,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4497110197723160}
   - component: {fileID: 114861390474255874}
-  - component: {fileID: 114190904086476996}
-  - component: {fileID: 114178319570087018}
   m_Layer: 0
   m_Name: Camera Arm
   m_TagString: Untagged
@@ -120,23 +120,12 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430063610220656}
   m_Enabled: 1
---- !u!114 &114178319570087018
+--- !u!114 &114519913797485140
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1665790600834830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65013be7558f8eb4dad0594be8367e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114190904086476996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1665790600834830}
+  m_GameObject: {fileID: 1430063610220656}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5d354f3716c4a0449e1039cfe6c82e5, type: 3}
@@ -144,6 +133,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerPriorities: 0900000008000000
   distanceToBackground: 100
+--- !u!114 &114521322652869238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430063610220656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65013be7558f8eb4dad0594be8367e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114861390474255874
 MonoBehaviour:
   m_ObjectHideFlags: 1
