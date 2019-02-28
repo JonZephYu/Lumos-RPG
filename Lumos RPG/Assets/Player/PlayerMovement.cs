@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
         currentClickTarget = transform.position;
     }
 
+    // TODO fix issue with click to move and WASD movement stacking movement speed.
+
+
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
