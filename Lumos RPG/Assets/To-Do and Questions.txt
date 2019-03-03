@@ -1,5 +1,13 @@
 Lumos RPG
 
+Up next:
+Player attack!  Enemy attack!  HP!
+Enemies move towards player to attack?
+Abilities
 
+
+Possiblities:
 Occlusion? (see char behind objects)
 More free/responsive movement (no turn time, etc)
+
+
