@@ -15,10 +15,14 @@ public class CursorAffordance : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cameraRaycaster = GetComponent<CameraRaycaster>();
+        cameraRaycaster.layerChangeObservers += CursorHandling;
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	private void CursorHandling () {
+        Debug.Log("Handled elsewhere!");
+
+        // TODO update to use with delegate architecture
         switch (cameraRaycaster.currentLayerHit) {
             case Layer.Walkable:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);

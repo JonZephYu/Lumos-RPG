@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class CameraRaycaster : MonoBehaviour
-{
+public class CameraRaycaster : MonoBehaviour {
     public Layer[] layerPriorities = {
         Layer.Enemy,
         Layer.Walkable
@@ -11,20 +10,38 @@ public class CameraRaycaster : MonoBehaviour
     Camera viewCamera;
 
     RaycastHit raycasterHit;
-    public RaycastHit hit
-    {
+    public RaycastHit hit {
         get { return raycasterHit; }
     }
 
     Layer layerHit;
-    public Layer currentLayerHit
-    {
+    public Layer currentLayerHit {
         get { return layerHit; }
     }
+
+    //New delegate type
+    public delegate void OnLayerChange();
+    //Instantiate an observer set
+    public OnLayerChange layerChangeObservers;
+
+    private void LayerChangeHandler() {
+        Debug.Log("Layer change handled!");
+    }
+
+    private void OtherLayerChangeHandler() {
+        Debug.Log("I also handled the layer change!");
+    }
+
+
 
     void Start() 
     {
         viewCamera = Camera.main;
+        layerChangeObservers += LayerChangeHandler;
+        layerChangeObservers += OtherLayerChangeHandler;
+        //Call the delegates
+        layerChangeObservers();
+
     }
 
     void Update()
