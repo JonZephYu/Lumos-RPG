@@ -24,23 +24,23 @@ public class CameraRaycaster : MonoBehaviour {
     //Instantiate an observer set
     public OnLayerChange layerChangeObservers;
 
-    private void LayerChangeHandler() {
-        Debug.Log("Layer change handled!");
-    }
+    //private void LayerChangeHandler() {
+    //    Debug.Log("Layer change handled!");
+    //}
 
-    private void OtherLayerChangeHandler() {
-        Debug.Log("I also handled the layer change!");
-    }
+    //private void OtherLayerChangeHandler() {
+    //    Debug.Log("I also handled the layer change!");
+    //}
 
 
 
     void Start() 
     {
         viewCamera = Camera.main;
-        layerChangeObservers += LayerChangeHandler;
-        layerChangeObservers += OtherLayerChangeHandler;
+        //layerChangeObservers += LayerChangeHandler;
+        //layerChangeObservers += OtherLayerChangeHandler;
         //Call the delegates
-        layerChangeObservers();
+        //layerChangeObservers();
 
     }
 
@@ -53,7 +53,13 @@ public class CameraRaycaster : MonoBehaviour {
             if (hit.HasValue)
             {
                 raycasterHit = hit.Value;
-                layerHit = layer;
+                //If layer has changed
+                if (layerHit != layer) {
+                    layerHit = layer;
+                    //Call the delegates
+                    layerChangeObservers();
+                }
+                
                 return;
             }
         }
