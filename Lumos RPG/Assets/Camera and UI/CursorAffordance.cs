@@ -17,16 +17,14 @@ public class CursorAffordance : MonoBehaviour {
 	void Start () {
         cameraRaycaster = GetComponent<CameraRaycaster>();
         //Registering as an observer
-        cameraRaycaster.layerChangeObservers += CursorHandling;
+        cameraRaycaster.layerChangeObservers += OnLayerChanged;
 	}
 	
 	// Only called when layer changes, when delegate is called
-	private void CursorHandling () {
+	private void OnLayerChanged (Layer newLayer) {
         Debug.Log("cursor on new layer");
 
-        // TODO update to use with delegate architecture
-
-        switch (cameraRaycaster.currentLayerHit) {
+        switch (newLayer) {
             case Layer.Walkable:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
                 break;
@@ -38,9 +36,8 @@ public class CursorAffordance : MonoBehaviour {
                 Cursor.SetCursor(unknownCursor, cursorHotspot, CursorMode.Auto);
                 return;
         }
-
-
-
-
     }
+
+    // TODO consider de-registering OnLayerChanged on leaving all game scenes
+
 }

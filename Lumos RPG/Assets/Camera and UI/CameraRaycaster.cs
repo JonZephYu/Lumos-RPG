@@ -20,9 +20,9 @@ public class CameraRaycaster : MonoBehaviour {
     }
 
     //New delegate type
-    public delegate void OnLayerChange();
+    public delegate void OnLayerChange(Layer newLayer);
     //Instantiate an observer set
-    public OnLayerChange layerChangeObservers;
+    public event OnLayerChange layerChangeObservers;
 
     //private void LayerChangeHandler() {
     //    Debug.Log("Layer change handled!");
@@ -44,20 +44,17 @@ public class CameraRaycaster : MonoBehaviour {
 
     }
 
-    void Update()
-    {
+    void Update() {
         // Look for and return priority layer hit
-        foreach (Layer layer in layerPriorities)
-        {
+        foreach (Layer layer in layerPriorities) {
             var hit = RaycastForLayer(layer);
-            if (hit.HasValue)
-            {
+            if (hit.HasValue) {
                 raycasterHit = hit.Value;
                 //If layer has changed
                 if (layerHit != layer) {
                     layerHit = layer;
                     //Call the delegates
-                    layerChangeObservers();
+                    layerChangeObservers(layer);
                 }
                 
                 return;
