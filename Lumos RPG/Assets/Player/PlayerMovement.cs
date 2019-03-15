@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField] float walkMoveStopRadius = 0.2f;
+    [SerializeField] float attackMoveStopRadius = 5f;
+    [SerializeField] float meleeMoveStopRadius = 3f;
 
     private ThirdPersonCharacter thirdPersonCharacter;   // A reference to the ThirdPersonCharacter on the object
     private CameraRaycaster cameraRaycaster;
-    private Vector3 currentClickTarget;
+    private Vector3 currentDestination, clickPoint;
 
     private bool isMouseMode = true;
         
@@ -18,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         thirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
-        currentClickTarget = transform.position;
+        currentDestination = transform.position;
     }
 
     // Fixed update is called in sync with physics
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         // TODO add to keybinding menu
         if (Input.GetKeyDown(KeyCode.G)) { //G for gamepad
             isMouseMode = !isMouseMode;
-            currentClickTarget = transform.position;
+            currentDestination = transform.position;
         }
 
         if (isMouseMode) {
@@ -69,13 +71,15 @@ public class PlayerMovement : MonoBehaviour
             //print(cameraRaycaster.layerHit);
             //print("Cursor raycast hit " + cameraRaycaster.hit.collider.gameObject.name.ToString());
 
+            clickPoint = cameraRaycaster.hit.point;
+
             switch (cameraRaycaster.currentLayerHit) {
                 case Layer.Walkable:
-                    currentClickTarget = cameraRaycaster.hit.point;
+                    currentDestination = ShortDestination(clickPoint, walkMoveStopRadius);
                     //if Move is here, will only move when button is held down.
                     break;
                 case Layer.Enemy:
-                    print("Not moving towards enemy");
+                    currentDestination = ShortDestination(clickPoint, attackMoveStopRadius);
                     break;
                 default:
                     print("Unexpected case");
@@ -84,14 +88,50 @@ public class PlayerMovement : MonoBehaviour
 
             //currentClickTarget = cameraRaycaster.hit.point;  // So not set in default case
         }
+
         //Using the move outside the input If will allow you to move even after releasing the button
-        var playerToClickPoint = transform.position - currentClickTarget;
+        WalkToDestination();
+    }
+
+
+    private void WalkToDestination() {
+        var playerToClickPoint = transform.position - currentDestination;
         if (playerToClickPoint.magnitude >= walkMoveStopRadius) {
-            thirdPersonCharacter.Move(currentClickTarget - transform.position, false, false);
+            thirdPersonCharacter.Move(currentDestination - transform.position, false, false);
         }
         else {
             thirdPersonCharacter.Move(Vector3.zero, false, false);
         }
     }
+
+    private Vector3 ShortDestination(Vector3 destination, float shortening) {
+        //reductionVector is the vector normalized to 1 between destination and current pos (direction vector)
+        //Multiplied by the amount we want shortened
+        Vector3 reductionVector = (destination - transform.position).normalized * shortening;
+
+        //Returning destination shortened by our designated shortening amount, along the correct direction vector
+        return destination - reductionVector;
+    }
+
+
+    private void OnDrawGizmos() {
+        //Draw movement gizmos
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(transform.position, currentDestination);
+        Gizmos.DrawSphere(currentDestination, 0.1f);
+
+        Gizmos.DrawSphere(clickPoint, 0.2f);
+
+        //Draw attack sphere
+        Gizmos.color = new Color(255f, 0f, 0f, .5f);
+        //Gizmos.DrawSphere(transform.position, attackMoveStopRadius);
+        Gizmos.DrawWireSphere(transform.position, attackMoveStopRadius);
+
+        Gizmos.color = new Color(100f, 255f, 255f, .75f);
+        Gizmos.DrawWireSphere(transform.position, meleeMoveStopRadius);
+
+    }
+
+
 }
 
