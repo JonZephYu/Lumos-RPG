@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 54699878841236038}
   - component: {fileID: 136053706861292458}
   - component: {fileID: 114322180077645628}
+  - component: {fileID: 114769656067430090}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -820,6 +821,22 @@ GameObject:
   - component: {fileID: 4465379203005036}
   m_Layer: 9
   m_Name: EthanLeftHandPinky1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1643649874009368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4681187003260518}
+  - component: {fileID: 114380982643852378}
+  m_Layer: 9
+  m_Name: UI Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2045,6 +2062,19 @@ Transform:
   m_Father: {fileID: 4643368885488884}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4681187003260518
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643649874009368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4912126653327350}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4702122956806920
 Transform:
   m_ObjectHideFlags: 1
@@ -2257,16 +2287,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433727203463994}
-  m_LocalRotation: {x: -0, y: 0.9626422, z: -0, w: 0.27077663}
-  m_LocalPosition: {x: -5.636, y: 0, z: 4.22}
+  m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
+  m_LocalPosition: {x: -7.0634155, y: 0, z: 6.2}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4548435142845700}
   - {fileID: 4781443152005280}
   - {fileID: 4087564423041810}
+  - {fileID: 4681187003260518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 148.57901, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 145.15701, z: 0}
 --- !u!4 &4916707355643392
 Transform:
   m_ObjectHideFlags: 1
@@ -2504,6 +2535,31 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 4
   m_AnimSpeedMultiplier: 5
   m_GroundCheckDistance: 0.3
+--- !u!114 &114380982643852378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643649874009368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1946e1c1bae1c34ba2666ebb3463952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCanvasPrefab: {fileID: 1311539807392560, guid: 9a9d70d10b9331d469e57254147e0430,
+    type: 2}
+--- !u!114 &114769656067430090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433727203463994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660bf9c02bc1c64489542fba65b800c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 1000
 --- !u!136 &136053706861292458
 CapsuleCollider:
   m_ObjectHideFlags: 1
