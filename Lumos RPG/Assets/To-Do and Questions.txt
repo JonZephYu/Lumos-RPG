@@ -1,7 +1,20 @@
 Lumos RPG
 
+Mouse vs controller ranged attack?
+Controller does not target an enemy, therefore cannot auto move into range/attack.
+
+Mouse (Current) - Click -> move into range -> attack
+Mouse Alt 2  (Goal) - move with WASD, aim towards mouse cursor
+Controller - shoot in either player forward direction, or "twin stick" aim direction
+
+Ranged vs melee?  
+Move into range then attack (range/melee basically same)
+or infinite ranged projectiles? (range just attacks, melee move->attack)
+
+
+
 Up next:
-Player attack!  Enemy attack!  HP!
+*Player attack!  Enemy attack!  HP!
 Enemies move towards player to attack?
 Abilities
 
