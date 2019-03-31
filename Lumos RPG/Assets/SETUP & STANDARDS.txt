@@ -13,7 +13,7 @@ For a longer ramp = 10
 
 ##Terrain Wall Height
 Walls are height 101
-
+'outer' terrain may be slightly higher for greater variety.  
 
 
 Our full best practices template can be found here...
