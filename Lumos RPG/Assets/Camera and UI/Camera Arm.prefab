@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4769337349190826}
   - component: {fileID: 20769625173062472}
   - component: {fileID: 81794657144594038}
-  - component: {fileID: 114519913797485140}
   - component: {fileID: 114521322652869238}
+  - component: {fileID: 114658181345230088}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -120,19 +120,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430063610220656}
   m_Enabled: 1
---- !u!114 &114519913797485140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1430063610220656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d354f3716c4a0449e1039cfe6c82e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerPriorities: 0900000008000000
-  distanceToBackground: 100
 --- !u!114 &114521322652869238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +135,18 @@ MonoBehaviour:
   targetCursor: {fileID: 2800000, guid: f4a8993fa588a00489f3cfc62a0c5107, type: 3}
   unknownCursor: {fileID: 2800000, guid: 84373ea30d9a6ff4880571f4d47230e5, type: 3}
   cursorHotspot: {x: 0, y: 0}
+--- !u!114 &114658181345230088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430063610220656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02853f5d34bd8f429969ac34c466d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerPriorities: 090000000a00000008000000
 --- !u!114 &114861390474255874
 MonoBehaviour:
   m_ObjectHideFlags: 1

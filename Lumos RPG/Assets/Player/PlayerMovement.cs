@@ -24,28 +24,28 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Fixed update is called in sync with physics
-    private void FixedUpdate() {
-        // TODO add to keybinding menu
-        if (Input.GetKeyDown(KeyCode.G)) { //G for gamepad
-            isMouseMode = !isMouseMode;
-            currentDestination = transform.position;
-        }
+    //private void FixedUpdate() {
+    //    // TODO add to keybinding menu
+    //    if (Input.GetKeyDown(KeyCode.G)) { //G for gamepad
+    //        isMouseMode = !isMouseMode;
+    //        currentDestination = transform.position;
+    //    }
 
-        if (isMouseMode) {
-            ProcessMouseMovement();
-        }
-        else {
-            ProcessDirectMovement();
-        }
-
-
+    //    if (isMouseMode) {
+    //        ProcessMouseMovement();
+    //    }
+    //    else {
+    //        ProcessDirectMovement();
+    //    }
 
 
-        //if (cameraRaycaster.layerHit == Layer.Walkable) {
-        //    m_Character.Move(currentClickTarget - transform.position, false, false);
-        //}
 
-    }
+
+    //    //if (cameraRaycaster.layerHit == Layer.Walkable) {
+    //    //    m_Character.Move(currentClickTarget - transform.position, false, false);
+    //    //}
+
+    //}
 
     private void ProcessDirectMovement() {
         // read inputs
@@ -66,32 +66,32 @@ public class PlayerMovement : MonoBehaviour
         thirdPersonCharacter.Move(movement, false, false);
     }
 
-    private void ProcessMouseMovement() {
-        if (Input.GetMouseButton(0)) {
-            //print(cameraRaycaster.layerHit);
-            //print("Cursor raycast hit " + cameraRaycaster.hit.collider.gameObject.name.ToString());
+    //private void ProcessMouseMovement() {
+    //    if (Input.GetMouseButton(0)) {
+    //        //print(cameraRaycaster.layerHit);
+    //        //print("Cursor raycast hit " + cameraRaycaster.hit.collider.gameObject.name.ToString());
 
-            clickPoint = cameraRaycaster.hit.point;
+    //        clickPoint = cameraRaycaster.hit.point;
 
-            switch (cameraRaycaster.currentLayerHit) {
-                case Layer.Walkable:
-                    currentDestination = ShortDestination(clickPoint, walkMoveStopRadius);
-                    //if Move is here, will only move when button is held down.
-                    break;
-                case Layer.Enemy:
-                    currentDestination = ShortDestination(clickPoint, attackMoveStopRadius);
-                    break;
-                default:
-                    print("Unexpected case");
-                    return;
-            }
+    //        switch (cameraRaycaster.currentLayerHit) {
+    //            case Layer.Walkable:
+    //                currentDestination = ShortDestination(clickPoint, walkMoveStopRadius);
+    //                //if Move is here, will only move when button is held down.
+    //                break;
+    //            case Layer.Enemy:
+    //                currentDestination = ShortDestination(clickPoint, attackMoveStopRadius);
+    //                break;
+    //            default:
+    //                print("Unexpected case");
+    //                return;
+    //        }
 
-            //currentClickTarget = cameraRaycaster.hit.point;  // So not set in default case
-        }
+    //        //currentClickTarget = cameraRaycaster.hit.point;  // So not set in default case
+    //    }
 
-        //Using the move outside the input If will allow you to move even after releasing the button
-        WalkToDestination();
-    }
+    //    //Using the move outside the input If will allow you to move even after releasing the button
+    //    WalkToDestination();
+    //}
 
 
     private void WalkToDestination() {
