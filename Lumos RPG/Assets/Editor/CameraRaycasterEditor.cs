@@ -21,6 +21,8 @@ public class CameraRaycasterEditor : Editor
             }
             EditorGUI.indentLevel--;
         }
+        //Note by having all these UI paints as methods, it is very easy to reorganize them
+        //PrintString();
 
         serializedObject.ApplyModifiedProperties(); // De-serialize back to cameraRaycaster (and create undo point)
     }
@@ -43,5 +45,13 @@ public class CameraRaycasterEditor : Editor
             var prop = serializedObject.FindProperty(string.Format("layerPriorities.Array.data[{0}]", i));
             prop.intValue = EditorGUILayout.LayerField(string.Format("Layer {0}:", i), prop.intValue);
         }
+    }
+
+    private void PrintString() {
+        //Current value is displayed in the textfield, has default value
+        string currentText = serializedObject.FindProperty("stringToPrint").stringValue;
+        string requiredText = EditorGUILayout.TextField("String to print", currentText);
+        //Update the property in CameraRaycaster
+        serializedObject.FindProperty("stringToPrint").stringValue = requiredText;
     }
 }

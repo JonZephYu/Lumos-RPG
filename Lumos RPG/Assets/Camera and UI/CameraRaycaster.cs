@@ -7,6 +7,7 @@ public class CameraRaycaster : MonoBehaviour
 {
 	// INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
 	[SerializeField] int[] layerPriorities;
+    //[SerializeField] string stringToPrint = "boop";
 
     float maxRaycastDepth = 100f; // Hard coded value
 	int topPriorityLayerLastFrame = -1; // So get ? from start with Default layer terrain
@@ -48,6 +49,9 @@ public class CameraRaycaster : MonoBehaviour
 		{
 			notifyMouseClickObservers (priorityHit.Value, layerHit);
 		}
+
+        print(stringToPrint);
+
 	}
 
 	void NotifyObserersIfLayerChanged(int newLayer)
