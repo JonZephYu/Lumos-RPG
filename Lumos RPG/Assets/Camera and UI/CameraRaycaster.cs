@@ -50,7 +50,7 @@ public class CameraRaycaster : MonoBehaviour
 			notifyMouseClickObservers (priorityHit.Value, layerHit);
 		}
 
-        print(stringToPrint);
+
 
 	}
 
