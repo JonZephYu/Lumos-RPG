@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 114691941563582624}
   - component: {fileID: 114047137776556204}
   - component: {fileID: 114220779847044400}
+  - component: {fileID: 114786274771387988}
   m_Layer: 0
   m_Name: Lunatya Player
   m_TagString: Player
@@ -553,6 +554,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac666c53006d47a48befe5bd2c64029e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114786274771387988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441950522335574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580da97021198f549918d239868a0e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136782813805539702
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -575,7 +587,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

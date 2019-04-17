@@ -21,7 +21,8 @@ public class EnemyUI : MonoBehaviour {
     // Update is called once per frame 
     void LateUpdate()
     {
-        transform.LookAt(cameraToLookAt.transform);
+        //transform.LookAt(cameraToLookAt.transform);
+        transform.forward = cameraToLookAt.transform.forward;
         //transform.rotation = Quaternion.identity;
         //transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
     }
