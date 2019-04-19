@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        Debug.Log(player.gameObject.name);
 	}
 	
 

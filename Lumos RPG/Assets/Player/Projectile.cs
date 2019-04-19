@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
+    [SerializeField] float damage = 10f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +17,16 @@ public class Projectile : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider collider) {
-        Debug.Log("Collided with " + collider.gameObject.name);
+        
+
+        Component damageableComponent = collider.gameObject.GetComponent(typeof(IDamageable));
+        Debug.Log("damageableComponent " + damageableComponent);
+
+        if (damageableComponent) {
+            (damageableComponent as IDamageable).TakeDamage(damage);
+        }
+        //(damageableComponent as IDamageable).TakeDamage()
+
+
     }
 }

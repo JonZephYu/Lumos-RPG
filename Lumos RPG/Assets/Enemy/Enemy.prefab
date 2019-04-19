@@ -2290,7 +2290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433727203463994}
   m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
-  m_LocalPosition: {x: 6.416626, y: 0, z: -11.706299}
+  m_LocalPosition: {x: -48.64711, y: 0, z: -21.382744}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4548435142845700}
@@ -2529,10 +2529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 3600
-  m_StationaryTurnSpeed: 1800
+  m_MovingTurnSpeed: 1000
+  m_StationaryTurnSpeed: 900
   m_JumpPower: 10
-  m_GravityMultiplier: 2
+  m_GravityMultiplier: 1
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 4
   m_AnimSpeedMultiplier: 5
@@ -2582,7 +2582,7 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433727203463994}
-  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
+  m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
@@ -2778,7 +2778,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 1
-  m_StoppingDistance: 69.4
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
