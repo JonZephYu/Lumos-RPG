@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114534110377783128}
   - component: {fileID: 114478868533662070}
   m_Layer: 9
-  m_Name: Projectile
+  m_Name: Projectile_Fast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6c35d69802d274e9b1f7498b73146e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 5
+  projectileSpeed: 10
   damage: 10
   lifetime: 1
 --- !u!114 &114534110377783128

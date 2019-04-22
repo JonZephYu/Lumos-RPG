@@ -1236,6 +1236,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1955358263968014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4054244896221936}
+  m_Layer: 9
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1956772458417094
 GameObject:
   m_ObjectHideFlags: 1
@@ -1309,6 +1324,19 @@ Transform:
   - {fileID: 4968033361936480}
   m_Father: {fileID: 4869704333636424}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4054244896221936
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955358263968014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4912126653327350}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4064406894001420
 Transform:
@@ -2290,13 +2318,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433727203463994}
   m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
-  m_LocalPosition: {x: -48.64711, y: 0, z: -21.382744}
+  m_LocalPosition: {x: -47.94188, y: 0, z: -24.851707}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4548435142845700}
   - {fileID: 4781443152005280}
   - {fileID: 4087564423041810}
   - {fileID: 4681187003260518}
+  - {fileID: 4054244896221936}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 145.15701, z: 0}
@@ -2564,6 +2593,10 @@ MonoBehaviour:
   maxHealthPoints: 1000
   aggroRadius: 6
   leashRadius: 13
+  attackRadius: 2
+  projectilePrefab: {fileID: 1960804584090574, guid: f11eeb26950a8694fb2d3b219e7edeac,
+    type: 2}
+  projectileSocket: {fileID: 1955358263968014}
 --- !u!114 &114889551236792512
 MonoBehaviour:
   m_ObjectHideFlags: 1

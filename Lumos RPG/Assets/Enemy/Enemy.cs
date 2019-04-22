@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour, IDamageable {
     [SerializeField] float aggroRadius = 1f;
     [SerializeField] float leashRadius = 3f;
     [SerializeField] float attackRadius = 2f;
+    [SerializeField] float damagePerShot = 9f;
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject projectileSocket;
     private float currentHealthPoints = 1000;
 
     GameObject player = null;
@@ -27,6 +30,9 @@ public class Enemy : MonoBehaviour, IDamageable {
         if (distanceToPlayer <= attackRadius){
             //TODO Spawn projectile
             Debug.Log(gameObject.name + " is attacking!");
+            //TODO slow attack down
+            Attack();
+
         }
         else if (distanceToPlayer <= aggroRadius) {
             aiCharacterControl.SetTarget(player.transform);
@@ -53,6 +59,15 @@ public class Enemy : MonoBehaviour, IDamageable {
         Gizmos.DrawWireSphere(transform.position, leashRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+    }
+
+    private void Attack() {
+        GameObject newProjectile = Instantiate(projectilePrefab, projectileSocket.transform.position, Quaternion.identity);
+        var projectileComponent = newProjectile.GetComponent<Projectile>();
+        projectileComponent.setDamage(damagePerShot);
+        Vector3 unitVectorToPlayer = (player.transform.position - projectileSocket.transform.position).normalized;
+        newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileComponent.projectileSpeed;
+
     }
 
 }

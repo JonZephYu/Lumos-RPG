@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-    [SerializeField] float damage = 10f;
+    //NOTE other classes can set
+    //TODO make SF with getter settters
+    public float projectileSpeed = 5f;
+    public float damage = 10f;
+    [SerializeField] float lifetime = 1f;
+    private float spawnTime;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start() {
+        spawnTime = Time.time;
+    }
+
+    private void Update() {
+        if (Time.time - spawnTime >= lifetime) {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter(Collider collider) {
         
@@ -29,4 +34,10 @@ public class Projectile : MonoBehaviour {
 
 
     }
+
+    public void setDamage(float newDamage) {
+        damage = newDamage;
+    }
+
+
 }
