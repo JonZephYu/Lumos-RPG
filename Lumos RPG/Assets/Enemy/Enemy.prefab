@@ -2593,7 +2593,9 @@ MonoBehaviour:
   maxHealthPoints: 1000
   aggroRadius: 6
   leashRadius: 13
-  attackRadius: 2
+  attackRadius: 4
+  damagePerShot: 9
+  attackTimer: 1
   projectilePrefab: {fileID: 1960804584090574, guid: f11eeb26950a8694fb2d3b219e7edeac,
     type: 2}
   projectileSocket: {fileID: 1955358263968014}
@@ -2811,7 +2813,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 1
-  m_StoppingDistance: 2
+  m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

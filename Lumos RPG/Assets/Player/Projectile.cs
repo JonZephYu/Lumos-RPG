@@ -7,8 +7,9 @@ public class Projectile : MonoBehaviour {
     //NOTE other classes can set
     //TODO make SF with getter settters
     public float projectileSpeed = 5f;
-    public float damage = 10f;
     [SerializeField] float lifetime = 1f;
+
+    private float damage = 10f;
     private float spawnTime;
 
     private void Start() {

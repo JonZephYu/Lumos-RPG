@@ -10,12 +10,15 @@ public class Enemy : MonoBehaviour, IDamageable {
     [SerializeField] float leashRadius = 3f;
     [SerializeField] float attackRadius = 2f;
     [SerializeField] float damagePerShot = 9f;
+    [SerializeField] float attackTimer = 1f;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject projectileSocket;
-    private float currentHealthPoints = 1000;
 
-    GameObject player = null;
-    AICharacterControl aiCharacterControl = null;
+
+    private float currentHealthPoints = 1000;
+    private bool isAttacking = false;
+    private GameObject player = null;
+    private AICharacterControl aiCharacterControl = null;
 
 
     // Use this for initialization
@@ -27,11 +30,10 @@ public class Enemy : MonoBehaviour, IDamageable {
     // Update is called once per frame
     void Update() {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-        if (distanceToPlayer <= attackRadius){
-            //TODO Spawn projectile
-            Debug.Log(gameObject.name + " is attacking!");
-            //TODO slow attack down
-            Attack();
+        if (distanceToPlayer <= attackRadius && !isAttacking) {
+            isAttacking = true;
+            // TODO switch to coroutine, consider attack speed instead of attack delay
+            InvokeRepeating("Attack", 0f, attackTimer);
 
         }
         else if (distanceToPlayer <= aggroRadius) {
@@ -40,6 +42,13 @@ public class Enemy : MonoBehaviour, IDamageable {
         else {
             aiCharacterControl.SetTarget(transform);
         }
+
+
+        if (distanceToPlayer > attackRadius) {
+            CancelInvoke("Attack");
+            isAttacking = false;
+        }
+
     }
 
     public float healthAsPercentage {
