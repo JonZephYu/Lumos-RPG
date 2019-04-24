@@ -2596,7 +2596,7 @@ MonoBehaviour:
   attackRadius: 4
   damagePerShot: 9
   attackTimer: 1
-  projectilePrefab: {fileID: 1960804584090574, guid: f11eeb26950a8694fb2d3b219e7edeac,
+  projectilePrefab: {fileID: 1951465661811864, guid: 6b08b31b80d72a74db16b110548ca650,
     type: 2}
   projectileSocket: {fileID: 1955358263968014}
 --- !u!114 &114889551236792512
