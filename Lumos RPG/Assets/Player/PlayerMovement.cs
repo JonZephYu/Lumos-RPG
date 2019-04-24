@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     //}
 
     private void ProcessMouseClick(RaycastHit raycastHit, int layerHit) {
-        Debug.Log("Mouse clicked");
 
         switch (layerHit) {
             case enemyLayer:

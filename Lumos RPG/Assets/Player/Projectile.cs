@@ -23,10 +23,7 @@ public class Projectile : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider collider) {
-        
-
         Component damageableComponent = collider.gameObject.GetComponent(typeof(IDamageable));
-        Debug.Log("damageableComponent " + damageableComponent);
 
         if (damageableComponent) {
             (damageableComponent as IDamageable).TakeDamage(damage);

@@ -30,8 +30,6 @@ public class CursorAffordance : MonoBehaviour {
 	
 	// Only called when layer changes, when delegate is called
 	private void OnLayerChanged (int newLayer) {
-        Debug.Log("cursor on new layer");
-
         switch (newLayer) {
             case walkableLayer:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
