@@ -5,12 +5,14 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Enemy : MonoBehaviour, IDamageable {
 
-    [SerializeField] float maxHealthPoints = 1000;
+    [SerializeField] float maxHealthPoints = 100;
     [SerializeField] float aggroRadius = 1f;
     [SerializeField] float leashRadius = 3f;
     [SerializeField] float attackRadius = 2f;
-    [SerializeField] float damagePerShot = 9f;
+    [SerializeField] float damagePerShot = 10f;
     [SerializeField] float attackTimer = 1f;
+    [SerializeField] float projectileLifetime = 1f;
+    [SerializeField] float projectileSpeed = 1f;
     [SerializeField] Vector3 aimOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject projectileSocket;
@@ -60,6 +62,9 @@ public class Enemy : MonoBehaviour, IDamageable {
 
     public void TakeDamage(float damage) {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+
+        //TODO animator hit stun if (!stunned || knockeddown)
+
         if (currentHealthPoints <= 0) { Destroy(gameObject); }
     }
 
@@ -78,8 +83,10 @@ public class Enemy : MonoBehaviour, IDamageable {
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSocket.transform.position, Quaternion.identity);
         var projectileComponent = newProjectile.GetComponent<Projectile>();
         projectileComponent.setDamage(damagePerShot);
+        projectileComponent.setLifetime(projectileLifetime);
+        projectileComponent.setSpeed(projectileSpeed);
         Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
-        newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileComponent.projectileSpeed;
+        newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileComponent.getSpeed();
 
     }
 
