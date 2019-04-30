@@ -1146,6 +1146,31 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114331031762531188, guid: cba79f704faef794c9f048c9b120f2be,
+        type: 2}
+      propertyPath: damagePerShot
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331031762531188, guid: cba79f704faef794c9f048c9b120f2be,
+        type: 2}
+      propertyPath: aggroRadius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331031762531188, guid: cba79f704faef794c9f048c9b120f2be,
+        type: 2}
+      propertyPath: leashRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331031762531188, guid: cba79f704faef794c9f048c9b120f2be,
+        type: 2}
+      propertyPath: attackRadius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331031762531188, guid: cba79f704faef794c9f048c9b120f2be,
+        type: 2}
+      propertyPath: maxHealthPoints
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cba79f704faef794c9f048c9b120f2be, type: 2}
   m_IsPrefabAsset: 0

@@ -735,8 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acdb4a55580bcd46a63142eeb61691b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 1000
-  attackStat: 100
+  maxHealthPoints: 250
+  attackStat: 50
   swingTimer: 1
   attackRange: 5
 --- !u!137 &137028088631492358

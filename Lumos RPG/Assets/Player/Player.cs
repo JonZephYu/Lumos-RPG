@@ -55,8 +55,9 @@ public class Player : MonoBehaviour, IDamageable {
                 if (Time.time - lastHitTime > swingTimer) {
                     var enemyComponent = enemy.GetComponent<Enemy>();
                     enemyComponent.TakeDamage(attackStat);
+                    lastHitTime = Time.time;
                 }   
-                lastHitTime = Time.time;
+                
 
                 break;
         }
