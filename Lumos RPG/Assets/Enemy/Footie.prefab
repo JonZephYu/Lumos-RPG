@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 114377510012777956}
   - component: {fileID: 114167503768759862}
   m_Layer: 9
-  m_Name: Bruiser
+  m_Name: Footie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1661,7 +1661,7 @@ Transform:
   m_GameObject: {fileID: 1834210917222566}
   m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
   m_LocalPosition: {x: -51.290764, y: 0, z: -27.916939}
-  m_LocalScale: {x: 3, y: 1.24, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4314320855060784}
   - {fileID: 4545814394752988}
@@ -2583,12 +2583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660bf9c02bc1c64489542fba65b800c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 300
+  maxHealthPoints: 225
   aggroRadius: 6
   leashRadius: 13
   attackRadius: 3
-  damagePerShot: 100
-  attackTimer: 2
+  damagePerShot: 35
+  attackTimer: 1
   projectileLifetime: 1
   projectileSpeed: 1
   aimOffset: {x: 0, y: 1, z: 0}
@@ -2812,7 +2812,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 1
