@@ -2586,7 +2586,7 @@ MonoBehaviour:
   maxHealthPoints: 3000
   aggroRadius: 6
   leashRadius: 13
-  attackRadius: 3
+  attackRadius: 4
   damagePerShot: 100
   attackTimer: 2
   projectileLifetime: 1

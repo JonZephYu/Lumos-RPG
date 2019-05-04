@@ -154,9 +154,10 @@ GameObject:
   - component: {fileID: 114691941563582624}
   - component: {fileID: 114047137776556204}
   - component: {fileID: 114220779847044400}
+  - component: {fileID: 114205810780441330}
   - component: {fileID: 114786274771387988}
   m_Layer: 0
-  m_Name: Lunatya Player
+  m_Name: 2d Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +447,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.73, y: 0, z: -27.69}
+  m_LocalPosition: {x: -54.388176, y: 0, z: -29.588226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4043338612711188}
@@ -511,14 +512,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acdb4a55580bcd46a63142eeb61691b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 1000
+  maxHealthPoints: 250
+  attackStat: 50
+  swingTimer: 1
+  attackRange: 5
 --- !u!114 &114120107147302590
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
   m_Name: 
@@ -531,13 +535,25 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 0.8
   m_AnimSpeedMultiplier: 1.2
   m_GroundCheckDistance: 1
---- !u!114 &114220779847044400
+--- !u!114 &114205810780441330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe96840c43fb458e7414bed5ff59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 5
+--- !u!114 &114220779847044400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441950522335574}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
   m_Name: 
@@ -549,7 +565,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac666c53006d47a48befe5bd2c64029e, type: 3}
   m_Name: 
@@ -560,7 +576,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 580da97021198f549918d239868a0e18, type: 3}
   m_Name: 

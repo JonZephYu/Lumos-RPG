@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 225
   aggroRadius: 6
-  leashRadius: 13
+  leashRadius: 12
   attackRadius: 3
   damagePerShot: 35
   attackTimer: 1

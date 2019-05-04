@@ -4,17 +4,17 @@ using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.AI;
 
 
-[RequireComponent(typeof (ThirdPersonCharacter))]
-[RequireComponent(typeof (NavMeshAgent))]
-[RequireComponent(typeof (AICharacterControl))]
-public class PlayerMovementSprite : MonoBehaviour
-{
+//[RequireComponent(typeof (ThirdPersonCharacter))]
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(AICharacterControl))]
+public class PlayerMovementSprite : MonoBehaviour {
 
     //[SerializeField] float walkMoveStopRadius = 0.2f;
     //[SerializeField] float attackMoveStopRadius = 5f;
     //[SerializeField] float meleeMoveStopRadius = 3f;
+    [SerializeField] float runSpeed = 5f;
 
-    private ThirdPersonCharacter thirdPersonCharacter;   // A reference to the ThirdPersonCharacter on the object
+    //private ThirdPersonCharacter thirdPersonCharacter;   // A reference to the ThirdPersonCharacter on the object
     private CameraRaycaster cameraRaycaster;
     private Vector3 currentDestination, clickPoint;
 
@@ -26,22 +26,54 @@ public class PlayerMovementSprite : MonoBehaviour
     [SerializeField] const int enemyLayer = 9;
     [SerializeField] const int stiffLayer = 10;
 
-    private bool isMouseMode = true;
-        
-    private void Start()
-    {
+    private bool isMouseMode = false;
+    private Rigidbody rigidBody;
+
+
+    private void Start() {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-        thirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
+        //thirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
         currentDestination = transform.position;
         aiCharacterControl = GetComponent<AICharacterControl>();
+        rigidBody = GetComponent<Rigidbody>();
 
         walkTarget = new GameObject("walkTarget");
 
+        //TODO Refactor better, clean up code, implement AI movement with 2d character
+        //TODO Fix sprite resolution issue (scaling causing graininess?)
+
+
         //Registering as an observer
-        cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
+        //cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
     }
 
-    
+    //Fixed update is called in sync with physics
+    private void FixedUpdate() {
+        // TODO add to keybinding menu
+        if (Input.GetKeyDown(KeyCode.G)) { //G for gamepad
+            isMouseMode = !isMouseMode;
+            currentDestination = transform.position;
+        }
+
+        if (isMouseMode) {
+            //ProcessMouseMovement();
+            Debug.Log("Not currently supporting mouse movement for 2d character");
+        }
+        else {
+            ProcessDirectMovement();
+        }
+
+
+
+
+        //    //if (cameraRaycaster.layerHit == Layer.Walkable) {
+        //    //    m_Character.Move(currentClickTarget - transform.position, false, false);
+        //    //}
+
+        //}
+    }
+
+
     //TODO make this get called again
     private void ProcessDirectMovement() {
         // read inputs
@@ -58,11 +90,14 @@ public class PlayerMovementSprite : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift)) movement *= 0.5f;
 #endif
 
+        //Apply velocity
+        rigidBody.velocity = movement * runSpeed;
+
         // pass all parameters to the character control script
-        thirdPersonCharacter.Move(movement, false, false);
+        //thirdPersonCharacter.Move(movement, false, false);
     }
 
-    
+
 
 
     //private void WalkToDestination() {
@@ -75,35 +110,35 @@ public class PlayerMovementSprite : MonoBehaviour
     //    }
     //}
 
-    private void ProcessMouseClick(RaycastHit raycastHit, int layerHit) {
-        Debug.Log("Mouse clicked");
+    //private void ProcessMouseClick(RaycastHit raycastHit, int layerHit) {
+    //    Debug.Log("Mouse clicked");
 
-        switch (layerHit) {
-            case enemyLayer:
-                //navigate to enemy
-                GameObject enemy = raycastHit.collider.gameObject;
-                aiCharacterControl.SetTarget(enemy.transform);
-                break;
-            case walkableLayer:
-                //Walk to mouse position on ground
-                walkTarget.transform.position = raycastHit.point;
-                aiCharacterControl.SetTarget(walkTarget.transform);
-                break;
-            
-            default:
-                Debug.LogError("unknown mouse click player movement");
-                return;
-        }
-    }
+    //    switch (layerHit) {
+    //        case enemyLayer:
+    //            //navigate to enemy
+    //            GameObject enemy = raycastHit.collider.gameObject;
+    //            aiCharacterControl.SetTarget(enemy.transform);
+    //            break;
+    //        case walkableLayer:
+    //            //Walk to mouse position on ground
+    //            walkTarget.transform.position = raycastHit.point;
+    //            aiCharacterControl.SetTarget(walkTarget.transform);
+    //            break;
 
-    private Vector3 ShortDestination(Vector3 destination, float shortening) {
-        //reductionVector is the vector normalized to 1 between destination and current pos (direction vector)
-        //Multiplied by the amount we want shortened
-        Vector3 reductionVector = (destination - transform.position).normalized * shortening;
+    //        default:
+    //            Debug.LogError("unknown mouse click player movement");
+    //            return;
+    //    }
+    //}
 
-        //Returning destination shortened by our designated shortening amount, along the correct direction vector
-        return destination - reductionVector;
-    }
+    //private Vector3 ShortDestination(Vector3 destination, float shortening) {
+    //    //reductionVector is the vector normalized to 1 between destination and current pos (direction vector)
+    //    //Multiplied by the amount we want shortened
+    //    Vector3 reductionVector = (destination - transform.position).normalized * shortening;
+
+    //    //Returning destination shortened by our designated shortening amount, along the correct direction vector
+    //    return destination - reductionVector;
+    //}
 
 
     //private void OnDrawGizmos() {
@@ -156,30 +191,6 @@ public class PlayerMovementSprite : MonoBehaviour
     //    WalkToDestination();
     //}
 
-
-    // Fixed update is called in sync with physics
-    //private void FixedUpdate() {
-    //    // TODO add to keybinding menu
-    //    if (Input.GetKeyDown(KeyCode.G)) { //G for gamepad
-    //        isMouseMode = !isMouseMode;
-    //        currentDestination = transform.position;
-    //    }
-
-    //    if (isMouseMode) {
-    //        ProcessMouseMovement();
-    //    }
-    //    else {
-    //        ProcessDirectMovement();
-    //    }
-
-
-
-
-    //    //if (cameraRaycaster.layerHit == Layer.Walkable) {
-    //    //    m_Character.Move(currentClickTarget - transform.position, false, false);
-    //    //}
-
-    //}
 
 
 }

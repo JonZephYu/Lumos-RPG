@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour, IDamageable {
         else if (distanceToPlayer <= aggroRadius) {
             aiCharacterControl.SetTarget(player.transform);
         }
-        else {
+        else if (distanceToPlayer >= leashRadius) {
             aiCharacterControl.SetTarget(transform);
         }
 
