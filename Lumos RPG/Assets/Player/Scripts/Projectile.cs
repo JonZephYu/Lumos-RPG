@@ -21,16 +21,30 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider collider) {
-        Component damageableComponent = collider.gameObject.GetComponent(typeof(IDamageable));
+    private void OnCollisionEnter(Collision collision) {
+        Component damageableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
 
         if (damageableComponent) {
             (damageableComponent as IDamageable).TakeDamage(damage);
+            //TODO Perhaps some projectiles do not get destroyed on collision, thus bouncing around funnily
+            Destroy(gameObject, .05f);
         }
         //(damageableComponent as IDamageable).TakeDamage()
 
 
     }
+
+    //Projectiles are now collision based
+    //private void OnTriggerEnter(Collider collider) {
+    //    Component damageableComponent = collider.gameObject.GetComponent(typeof(IDamageable));
+
+    //    if (damageableComponent) {
+    //        (damageableComponent as IDamageable).TakeDamage(damage);
+    //    }
+    //    //(damageableComponent as IDamageable).TakeDamage()
+
+
+    //}
 
     public void setDamage(float newDamage) {
         damage = newDamage;

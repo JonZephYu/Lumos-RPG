@@ -37,8 +37,6 @@ GameObject:
   - component: {fileID: 4974390980535722}
   - component: {fileID: 135408499690890072}
   - component: {fileID: 54750220498409048}
-  - component: {fileID: 114996010278526998}
-  - component: {fileID: 114471065788043384}
   - component: {fileID: 114690842315539736}
   - component: {fileID: 212966773861762844}
   m_Layer: 9
@@ -82,14 +80,14 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951465661811864}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!96 &96039190115130676
 TrailRenderer:
   serializedVersion: 2
@@ -182,17 +180,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &114471065788043384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951465661811864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa7e0829bc72c94babd728cc0466196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114690842315539736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,21 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6c35d69802d274e9b1f7498b73146e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114996010278526998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951465661811864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e004fefca5c7ba44d9c5ffd46fdee2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovePower: 5
-  m_UseTorque: 1
-  m_MaxAngularVelocity: 25
-  m_JumpPower: 4
 --- !u!135 &135408499690890072
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -226,7 +198,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951465661811864}
   m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
