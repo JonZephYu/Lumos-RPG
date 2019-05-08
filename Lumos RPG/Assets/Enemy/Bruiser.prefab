@@ -2613,7 +2613,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 4
   m_AnimSpeedMultiplier: 5
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 1
 --- !u!136 &136313537534401136
 CapsuleCollider:
   m_ObjectHideFlags: 1

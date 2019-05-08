@@ -1875,7 +1875,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039619828544664}
   m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
-  m_LocalPosition: {x: -0.2879715, y: 0, z: -3.2275772}
+  m_LocalPosition: {x: -28.940285, y: 0, z: -5.6656723}
   m_LocalScale: {x: 2, y: 0.5, z: 3}
   m_Children:
   - {fileID: 4227408328149748}
@@ -1893,7 +1893,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142401178248422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4, z: 0}
+  m_LocalPosition: {x: 0, y: 4.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4554868124701078}
@@ -2574,7 +2574,7 @@ MonoBehaviour:
   maxHealthPoints: 75
   aggroRadius: 6
   leashRadius: 10
-  attackRadius: 2
+  attackRadius: 3
   damagePerShot: 5
   attackTimer: 1
   projectileLifetime: 0.5
@@ -2613,7 +2613,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 4
   m_AnimSpeedMultiplier: 5
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 1
 --- !u!136 &136666850497921472
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2623,10 +2623,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.6
+  m_Radius: 0.5
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137088664852260774
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
