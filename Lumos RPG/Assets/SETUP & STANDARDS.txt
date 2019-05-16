@@ -7,6 +7,13 @@ We will be using Unity's default 1 m = 1 Unity Unit. Note animations don't scale
 ## Layers
 So far the layers of note are `Walkable` and `Enemy`, and are self-explanatory in their use. Note it is the collider that receives the raycast, so do apply layers to children.
 
+## SceneSetup Tag
+Note, make sure to continually add the SceneSetup tag to neccessary components
+
+## Characters
+Height of 2 units, width of 1.  
+
+
 ## Ramp angles
 Maximum ramp Z value = 15
 For a longer ramp = 10
