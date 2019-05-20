@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4953148497036644}
   - component: {fileID: 212121627136308038}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_RThigh
+  m_Name: RThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4316648310753076}
   - component: {fileID: 212374988373815978}
   m_Layer: 0
-  m_Name: 'Lunatya Spritesheet_Torso '
+  m_Name: 'Torso '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4378114877345240}
   - component: {fileID: 212016027638900450}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_LThigh
+  m_Name: LThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4594081802898220}
   - component: {fileID: 212938554028622650}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_RForearm
+  m_Name: RForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4169144580363434}
   - component: {fileID: 212732134629889260}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_LUpperarm
+  m_Name: LUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4295501407226754}
   - component: {fileID: 212206619838607274}
   m_Layer: 0
-  m_Name: 'Lunatya Spritesheet_Crotch '
+  m_Name: 'Crotch '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 4419643534900154}
   - component: {fileID: 212634767297819644}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_LForearm
+  m_Name: LForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 4636864386019932}
   - component: {fileID: 212098354258971050}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_RUpperarm
+  m_Name: RUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 4492103742423134}
   - component: {fileID: 212260490894358604}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_Head
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 4416698024323038}
   - component: {fileID: 212920924196637124}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_RHand
+  m_Name: RHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 4397002540284256}
   - component: {fileID: 212977081041798108}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_RFoot
+  m_Name: RFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4629356191842826}
   - component: {fileID: 212584274616235170}
   m_Layer: 0
-  m_Name: Lunatya Spritesheet_LHand
+  m_Name: LHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370549596013862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.1, z: 0}
+  m_LocalPosition: {x: 0, y: 2.291, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4772769134039638}
@@ -505,7 +505,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.968872, y: 0, z: -27.782646}
+  m_LocalPosition: {x: 2.3195648, y: 0, z: 1.9977112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4043338612711188}
@@ -540,7 +540,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!95 &95842770291533818
 Animator:
@@ -583,6 +583,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1951465661811864, guid: ff552a17bc72c944582d3868eafa8a61,
     type: 2}
   projectileSocket: {fileID: 1370549596013862}
+  weaponSocket: {fileID: 1656955490157830}
+  weaponInUse: {fileID: 11400000, guid: 18014b76a81873a4aa2dc400ffa3d000, type: 2}
 --- !u!114 &114120107147302590
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -40,8 +40,9 @@ public class PlayerMovementSprite : MonoBehaviour {
         walkTarget = new GameObject("walkTarget");
 
         //TODO Refactor better, clean up code, implement AI movement with 2d character
-        //TODO Fix sprite resolution issue (scaling causing graininess?)
-
+        //TODO Fix sprite resolution issue (scaling causing graininess?)  CONFIRMED
+        // TODO scaling was causing res issues.  Using FEH sprites for now.  Replace with own. 
+        // TODO BUG sometimes when player bumps into something, get tilted and start sliding
 
         //Registering as an observer
         //cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;

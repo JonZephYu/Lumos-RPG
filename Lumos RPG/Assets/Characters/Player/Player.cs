@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] float swingTimer = 1f;
     [SerializeField] float attackRange = 5f;
 
+    
+
     //Projectile info
     [SerializeField] float damagePerShot = 10f;
     [SerializeField] float attackTimer = 1f;
@@ -18,7 +21,9 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] Vector3 aimOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject projectileSocket;
+    [SerializeField] GameObject weaponSocket;
 
+    [SerializeField] Weapon weaponInUse;
 
     //TODO solve serialize and const confliction
     [SerializeField] const int walkableLayer = 8;
@@ -32,9 +37,22 @@ public class Player : MonoBehaviour, IDamageable {
     private float lastHitTime;
 
     private void Start() {
-        cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
+        RegisterForMouseClick();
         currentHealthPoints = maxHealthPoints;
 
+        EquipWeaponInHand();
+
+        
+    }
+
+    private void EquipWeaponInHand() {
+        Instantiate(weaponInUse.GetWeaponPrefab(), weaponSocket.transform);
+
+        //TODO get weapon in right position/rotation
+    }
+
+    private void RegisterForMouseClick() {
+        cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
     }
 
@@ -53,6 +71,12 @@ public class Player : MonoBehaviour, IDamageable {
             isAttacking = true;
             // TODO switch to coroutine, consider attack speed instead of attack delay
             InvokeRepeating("Attack", 0f, attackTimer);
+
+            //if (Time.time - lastHitTime > swingTimer) {
+            //    Attack();
+            //    lastHitTime = Time.time;
+            //}
+
         }
         else {
             CancelInvoke("Attack");
