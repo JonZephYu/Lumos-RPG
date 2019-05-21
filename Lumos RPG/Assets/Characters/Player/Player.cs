@@ -46,7 +46,10 @@ public class Player : MonoBehaviour, IDamageable {
     }
 
     private void EquipWeaponInHand() {
-        Instantiate(weaponInUse.GetWeaponPrefab(), weaponSocket.transform);
+        var weapon = Instantiate(weaponInUse.GetWeaponPrefab(), weaponSocket.transform);
+        weapon.transform.localPosition = weaponInUse.weaponTransform.localPosition;
+        weapon.transform.localRotation = weaponInUse.weaponTransform.localRotation;
+
 
         //TODO get weapon in right position/rotation
     }
