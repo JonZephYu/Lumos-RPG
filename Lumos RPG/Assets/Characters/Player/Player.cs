@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 
 public class Player : MonoBehaviour, IDamageable {
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] Vector3 aimOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject projectileSocket;
-    [SerializeField] GameObject weaponSocket;
+    //[SerializeField] GameObject weaponSocket;
 
     [SerializeField] Weapon weaponInUse;
 
@@ -46,12 +47,19 @@ public class Player : MonoBehaviour, IDamageable {
     }
 
     private void EquipWeaponInHand() {
+        GameObject weaponSocket = RequestDominantHand();
         var weapon = Instantiate(weaponInUse.GetWeaponPrefab(), weaponSocket.transform);
         weapon.transform.localPosition = weaponInUse.weaponTransform.localPosition;
         weapon.transform.localRotation = weaponInUse.weaponTransform.localRotation;
+    }
 
+    private GameObject RequestDominantHand() {
+        var dominantHands = GetComponentsInChildren<DominantHand>();
+        int numberOfDominantHands = dominantHands.Length;
+        Assert.AreNotEqual(numberOfDominantHands, 0, "No dominant hand found on player, add one!");
+        Assert.IsFalse(numberOfDominantHands > 1, "Multiple DominantHand scripts found, remove until only 1 remains");
+        return dominantHands[0].gameObject;
 
-        //TODO get weapon in right position/rotation
     }
 
     private void RegisterForMouseClick() {
@@ -69,6 +77,8 @@ public class Player : MonoBehaviour, IDamageable {
         //if (currentHealthPoints <= 0) { Destroy(gameObject);}
     }
 
+
+    // TODO need refactoring
     private void OnMouseClick(RaycastHit raycastHit, int layerHit) {
         if (!isAttacking) {
             isAttacking = true;

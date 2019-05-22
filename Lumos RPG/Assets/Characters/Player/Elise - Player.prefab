@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416698024323038}
   - component: {fileID: 212920924196637124}
+  - component: {fileID: 114042786001502740}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -505,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441950522335574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3195648, y: 0, z: 1.9977112}
+  m_LocalPosition: {x: -3.45, y: 0, z: 1.9977112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4043338612711188}
@@ -560,6 +561,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114042786001502740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656955490157830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2274bd236feab46a1b0657d72864af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114047137776556204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -584,7 +596,7 @@ MonoBehaviour:
     type: 2}
   projectileSocket: {fileID: 1370549596013862}
   weaponSocket: {fileID: 1656955490157830}
-  weaponInUse: {fileID: 11400000, guid: 18014b76a81873a4aa2dc400ffa3d000, type: 2}
+  weaponInUse: {fileID: 11400000, guid: c166d0bc97ca9e84985940fcacc86cc6, type: 2}
 --- !u!114 &114120107147302590
 MonoBehaviour:
   m_ObjectHideFlags: 1
