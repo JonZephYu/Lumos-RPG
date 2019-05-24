@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
+    // SF so can inspect when paused
+    [SerializeField] GameObject shooter;
+
     //NOTE other classes can set
     //TODO make SF with getter settters
     private float projectileSpeed = 5f;
     private float lifetime = 1f;
     private float damage = 10f;
     private float spawnTime;
+    private Layer myLayer;
+    private float DESTROY_DELAY = .05f;
+
 
     private void Start() {
         spawnTime = Time.time;
@@ -21,17 +27,39 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        Component damageableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
+    public void SetShooter(GameObject shooter) {
+        this.shooter = shooter;
+    }
+
+    //private void OnCollisionEnter(Collision collision) {
+    //    if (collision.gameObject.layer != shooter.layer) {
+    //        HandleDamage(collision);
+    //    }
+
+        
+
+    //}
+
+    private void OnTriggerEnter(Collider coll) {
+        if (coll.gameObject.layer != shooter.layer) {
+            HandleDamage(coll);
+        }
+
+
+
+    }
+
+
+
+    private void HandleDamage(Collider coll) {
+        Component damageableComponent = coll.gameObject.GetComponent(typeof(IDamageable));
 
         if (damageableComponent) {
             (damageableComponent as IDamageable).TakeDamage(damage);
             //TODO Perhaps some projectiles do not get destroyed on collision, thus bouncing around funnily
-            Destroy(gameObject, .05f);
+            Destroy(gameObject, DESTROY_DELAY);
         }
         //(damageableComponent as IDamageable).TakeDamage()
-
-
     }
 
     //Projectiles are now collision based

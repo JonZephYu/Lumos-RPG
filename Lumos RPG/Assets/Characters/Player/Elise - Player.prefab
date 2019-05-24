@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4953148497036644}
   - component: {fileID: 212121627136308038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4316648310753076}
   - component: {fileID: 212374988373815978}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 'Torso '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4378114877345240}
   - component: {fileID: 212016027638900450}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4043338612711188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594081802898220}
   - component: {fileID: 212938554028622650}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4169144580363434}
   - component: {fileID: 212732134629889260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4618567504399270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Projectile Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4295501407226754}
   - component: {fileID: 212206619838607274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 'Crotch '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4019780796797828}
   - component: {fileID: 212581429326205024}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Accessory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4419643534900154}
   - component: {fileID: 212634767297819644}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 114220779847044400}
   - component: {fileID: 114205810780441330}
   - component: {fileID: 114786274771387988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Elise - Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636864386019932}
   - component: {fileID: 212098354258971050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4492103742423134}
   - component: {fileID: 212260490894358604}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416698024323038}
   - component: {fileID: 212920924196637124}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4699465782036092}
   - component: {fileID: 212115858104746446}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lunatya Spritesheet_LFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4397002540284256}
   - component: {fileID: 212977081041798108}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4629356191842826}
   - component: {fileID: 212584274616235170}
   - component: {fileID: 114502751154570286}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370549596013862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.929, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4772769134039638}
@@ -576,10 +576,10 @@ MonoBehaviour:
   attackStat: 50
   swingTimer: 1
   attackRange: 5
-  damagePerShot: 10
+  damagePerShot: 50
   attackTimer: 1
-  projectileLifetime: 1
-  projectileSpeed: 1
+  projectileLifetime: 3
+  projectileSpeed: 5
   aimOffset: {x: 0, y: 1, z: 0}
   projectilePrefab: {fileID: 1951465661811864, guid: 7041e5a2dc422da4aa387742f0084a91,
     type: 2}

@@ -129,14 +129,15 @@ public class Player : MonoBehaviour, IDamageable {
         projectileComponent.setLifetime(projectileLifetime);
         projectileComponent.setSpeed(projectileSpeed);
 
+        projectileComponent.SetShooter(gameObject);
         // TODO allign arrow to destination
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, transform.position);
+        Plane plane = new Plane(Vector3.up, transform.position + aimOffset);
         float distance;
         if (plane.Raycast(ray, out distance)) {
             Vector3 target = ray.GetPoint(distance);
-            Vector3 direction = target - projectileSocket.transform.position;
+            Vector3 direction = (target - projectileSocket.transform.position).normalized;
             float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             newProjectile.GetComponent<Rigidbody>().velocity = direction * projectileComponent.getSpeed();
 

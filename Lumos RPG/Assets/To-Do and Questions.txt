@@ -26,5 +26,7 @@ Animations
 Possiblities:
 Occlusion? (see char behind objects)
 More free/responsive movement (no turn time, etc)
+Projectiles colliding is cool!  
+
 
 

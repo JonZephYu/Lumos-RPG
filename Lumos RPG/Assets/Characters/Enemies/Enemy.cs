@@ -79,12 +79,16 @@ public class Enemy : MonoBehaviour, IDamageable {
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 
+
+    // TODO separate out character firing logic into separate class
     private void Attack() {
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSocket.transform.position, Quaternion.identity);
         var projectileComponent = newProjectile.GetComponent<Projectile>();
         projectileComponent.setDamage(damagePerShot);
         projectileComponent.setLifetime(projectileLifetime);
         projectileComponent.setSpeed(projectileSpeed);
+        projectileComponent.SetShooter(gameObject);
+
         Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
         newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileComponent.getSpeed();
 
