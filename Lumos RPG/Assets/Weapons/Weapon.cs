@@ -13,4 +13,6 @@ public class Weapon : ScriptableObject {
     public GameObject GetWeaponPrefab() {
         return weaponPrefab;
     }
+
+    // TODO Associate projectiles to weapon instead of having it on player
 }

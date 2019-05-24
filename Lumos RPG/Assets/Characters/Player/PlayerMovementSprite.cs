@@ -28,6 +28,7 @@ public class PlayerMovementSprite : MonoBehaviour {
 
     private bool isMouseMode = false;
     private Rigidbody rigidBody;
+    private Animator anim;
 
 
     private void Start() {
@@ -36,7 +37,7 @@ public class PlayerMovementSprite : MonoBehaviour {
         currentDestination = transform.position;
         aiCharacterControl = GetComponent<AICharacterControl>();
         rigidBody = GetComponent<Rigidbody>();
-
+        anim = GetComponent<Animator>();
         walkTarget = new GameObject("walkTarget");
 
         //TODO Refactor better, clean up code, implement AI movement with 2d character
@@ -93,6 +94,14 @@ public class PlayerMovementSprite : MonoBehaviour {
 
         //Apply velocity
         rigidBody.velocity = movement * runSpeed;
+
+        if (h == 0 && v == 0) {
+            anim.SetBool("isWalking", false);
+        }
+        else {
+            anim.SetBool("isWalking", true);
+        }
+       
 
         // pass all parameters to the character control script
         //thirdPersonCharacter.Move(movement, false, false);

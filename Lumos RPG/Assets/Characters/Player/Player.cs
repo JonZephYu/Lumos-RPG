@@ -36,10 +36,12 @@ public class Player : MonoBehaviour, IDamageable {
     private GameObject currentTarget;
     private CameraRaycaster cameraRaycaster;
     private float lastHitTime;
+    private Animator anim;
 
     private void Start() {
         RegisterForMouseClick();
         currentHealthPoints = maxHealthPoints;
+        anim = GetComponent<Animator>();
 
         EquipWeaponInHand();
 
@@ -91,7 +93,8 @@ public class Player : MonoBehaviour, IDamageable {
             //}
 
         }
-        else {
+        else if (isAttacking) {
+            // TODO only attack while mouse is down, currently cannot cancel your attacking
             CancelInvoke("Attack");
             isAttacking = false;
         }
@@ -126,7 +129,7 @@ public class Player : MonoBehaviour, IDamageable {
         projectileComponent.setLifetime(projectileLifetime);
         projectileComponent.setSpeed(projectileSpeed);
 
-
+        // TODO allign arrow to destination
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, transform.position);
@@ -141,12 +144,11 @@ public class Player : MonoBehaviour, IDamageable {
 
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mousePos);
         mousePos.z = 0;
         Vector3 playerToMouse = (mousePos - projectileSocket.transform.position).normalized;
-        Debug.Log("ptm" + playerToMouse);
+        
 
-
+        anim.SetTrigger("isAttacking");
 
 
         
