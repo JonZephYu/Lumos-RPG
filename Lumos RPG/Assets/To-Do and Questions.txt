@@ -21,6 +21,7 @@ Make some 2d enemies to replace our 3d ones
 Fix movement (3d)
 Fix AI movement for 2d characters (need to revamp the dependacies and move methods)
 Animations
+Mage character gets rapid fire Flamethrower-like basic attack, while others will have more slow AA
 
 
 Possiblities:

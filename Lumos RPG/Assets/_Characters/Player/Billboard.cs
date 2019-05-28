@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO namespace
+
 public class Billboard : MonoBehaviour {
 
 	// Use this for initialization
