@@ -578,9 +578,11 @@ MonoBehaviour:
   attackRange: 5
   damagePerShot: 50
   attackTimer: 1
-  projectileLifetime: 3
-  projectileSpeed: 5
+  projectileLifetime: 1
+  projectileSpeed: 10
   aimOffset: {x: 0, y: 1, z: 0}
+  animOverrideContoller: {fileID: 22100000, guid: ce6382407fcd7794a963c94f127f9226,
+    type: 2}
   projectilePrefab: {fileID: 1951465661811864, guid: 7041e5a2dc422da4aa387742f0084a91,
     type: 2}
   projectileSocket: {fileID: 1370549596013862}

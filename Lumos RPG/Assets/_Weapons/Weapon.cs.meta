@@ -3,7 +3,10 @@ guid: 87eff38335aebbc4b8e797f8b046c4b1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - weaponTransform: {instanceID: 0}
+  - weaponPrefab: {instanceID: 0}
+  - attackAnimation: {fileID: 7400000, guid: e0bac8cffc7b5a64cabdb6fe762e0600, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

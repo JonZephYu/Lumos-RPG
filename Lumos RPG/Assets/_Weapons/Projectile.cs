@@ -44,7 +44,7 @@ namespace RPG.Weapons {
         //}
 
         private void OnTriggerEnter(Collider coll) {
-            if (coll.gameObject.layer != shooter.layer) {
+            if (shooter && coll.gameObject.layer != shooter.layer) {
                 HandleDamage(coll);
             }
 

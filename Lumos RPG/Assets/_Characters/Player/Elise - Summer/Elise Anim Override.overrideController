@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Elise Anim Override
+  m_Controller: {fileID: 9100000, guid: d900ebbbd626f424d8d9165f1ab321c8, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5b62f16ccade00b479b00e32ea862f2f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e0bac8cffc7b5a64cabdb6fe762e0600, type: 2}

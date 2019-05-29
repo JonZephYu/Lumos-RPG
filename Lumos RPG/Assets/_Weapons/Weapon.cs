@@ -16,5 +16,10 @@ namespace RPG.Weapons {
         }
 
         // TODO Associate projectiles to weapon instead of having it on player
+
+
+        public AnimationClip GetAnimClip() {
+            return attackAnimation;
+        }
     }
 }

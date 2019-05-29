@@ -24,11 +24,13 @@ namespace RPG.Characters {
         [SerializeField] float projectileLifetime = 1f;
         [SerializeField] float projectileSpeed = 1f;
         [SerializeField] Vector3 aimOffset = new Vector3(0f, 1f, 0f);
+        [SerializeField] AnimatorOverrideController animOverrideContoller;
         [SerializeField] GameObject projectilePrefab;
         [SerializeField] GameObject projectileSocket;
         //[SerializeField] GameObject weaponSocket;
 
         [SerializeField] Weapon weaponInUse;
+        
 
         //TODO solve serialize and const confliction
         [SerializeField] const int walkableLayer = 8;
@@ -44,12 +46,23 @@ namespace RPG.Characters {
 
         private void Start() {
             RegisterForMouseClick();
-            currentHealthPoints = maxHealthPoints;
-            anim = GetComponent<Animator>();
-
+            SetStartingHealth();
             EquipWeaponInHand();
+            OverrideAnimatorController();
 
 
+        }
+
+        private void OverrideAnimatorController() {
+            anim = GetComponent<Animator>();
+            anim.runtimeAnimatorController = animOverrideContoller;
+            animOverrideContoller["DEFAULT_ATTACK"] = weaponInUse.GetAnimClip();
+
+            throw new NotImplementedException();
+        }
+
+        private void SetStartingHealth() {
+            currentHealthPoints = maxHealthPoints;
         }
 
         private void EquipWeaponInHand() {
