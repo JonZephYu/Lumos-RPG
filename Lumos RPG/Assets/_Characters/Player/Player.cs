@@ -16,16 +16,14 @@ namespace RPG.Characters {
 
         //[SerializeField] float attackRange = 5f;
 
-
-
         //Projectile info
         [SerializeField] float damagePerShot = 10f;
         [SerializeField] float attackTimer = 1f;
-        [SerializeField] float projectileLifetime = 1f;
-        [SerializeField] float projectileSpeed = 1f;
+        //[SerializeField] float projectileLifetime = 1f;
+        //[SerializeField] float projectileSpeed = 1f;
         [SerializeField] Vector3 aimOffset = new Vector3(0f, 1f, 0f);
         [SerializeField] AnimatorOverrideController animOverrideContoller;
-        [SerializeField] GameObject projectilePrefab;
+        //[SerializeField] GameObject projectilePrefab;
         [SerializeField] GameObject projectileSocket;
         //[SerializeField] GameObject weaponSocket;
 
@@ -43,6 +41,7 @@ namespace RPG.Characters {
         private CameraRaycaster cameraRaycaster;
         private float lastHitTime;
         private float swingTimer;
+        private GameObject projectilePrefab;
         private Animator anim;
 
         private void Start() {
@@ -72,6 +71,7 @@ namespace RPG.Characters {
             weapon.transform.localRotation = weaponInUse.weaponTransform.localRotation;
 
             swingTimer = weaponInUse.GetSwingTimer();
+            projectilePrefab = weaponInUse.GetProjectilePrefab();
         }
 
         private GameObject RequestDominantHand() {
@@ -102,6 +102,7 @@ namespace RPG.Characters {
         // TODO need refactoring
         private void OnMouseClick(RaycastHit raycastHit, int layerHit) {
 
+            // TODO swingTimer modified by player Speed stat later on
             // Will also keep firing when mouse is held down, but with the swingTimer delay --- no rapid fire
             if (Time.time - lastHitTime > swingTimer) {
                 Attack();
@@ -155,8 +156,11 @@ namespace RPG.Characters {
             GameObject newProjectile = Instantiate(projectilePrefab, projectileSocket.transform.position, Quaternion.identity);
             var projectileComponent = newProjectile.GetComponent<Projectile>();
             projectileComponent.setDamage(damagePerShot);
-            projectileComponent.setLifetime(projectileLifetime);
-            projectileComponent.setSpeed(projectileSpeed);
+
+            // TODO possibly modify projectile via player stats/buffs/etc
+
+            projectileComponent.setLifetime(weaponInUse.GetProjectileLifetime());
+            projectileComponent.setSpeed(weaponInUse.GetProjectileSpeed());
 
             projectileComponent.SetShooter(gameObject);
             // TODO allign arrow to destination

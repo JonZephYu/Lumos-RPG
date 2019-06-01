@@ -9,10 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87eff38335aebbc4b8e797f8b046c4b1, type: 3}
-  m_Name: SilverBrand
+  m_Name: _SilverBrand
   m_EditorClassIdentifier: 
   weaponTransform: {fileID: 4300886504628164, guid: 83eb8f1eab0b81a468811c2685bed6d2,
     type: 2}
   weaponPrefab: {fileID: 1136744145904706, guid: 7ad827e0d8777234b827fd3f687bf51a,
     type: 2}
+  projectilePrefab: {fileID: 1031770760262826, guid: 0d0f34853412f1848afee806ecda806e,
+    type: 2}
   attackAnimation: {fileID: 7400000, guid: 81bc3bfb0da71d74fa951a8fe7833e6d, type: 2}
+  swingTimer: 0.5
+  projectileLifetime: 0.1
+  projectileSpeed: 20
