@@ -13,8 +13,8 @@ namespace RPG.Characters {
 
         [SerializeField] float maxHealthPoints = 1000f;
         [SerializeField] float attackStat = 10f;
-        [SerializeField] float swingTimer = 1f;
-        [SerializeField] float attackRange = 5f;
+
+        //[SerializeField] float attackRange = 5f;
 
 
 
@@ -42,23 +42,23 @@ namespace RPG.Characters {
         private GameObject currentTarget;
         private CameraRaycaster cameraRaycaster;
         private float lastHitTime;
+        private float swingTimer;
         private Animator anim;
 
         private void Start() {
             RegisterForMouseClick();
             SetStartingHealth();
             EquipWeaponInHand();
-            OverrideAnimatorController();
+            SetupRuntimeAnim();
 
 
         }
 
-        private void OverrideAnimatorController() {
+        private void SetupRuntimeAnim() {
             anim = GetComponent<Animator>();
             anim.runtimeAnimatorController = animOverrideContoller;
             animOverrideContoller["DEFAULT_ATTACK"] = weaponInUse.GetAnimClip();
 
-            throw new NotImplementedException();
         }
 
         private void SetStartingHealth() {
@@ -70,6 +70,8 @@ namespace RPG.Characters {
             var weapon = Instantiate(weaponInUse.GetWeaponPrefab(), weaponSocket.transform);
             weapon.transform.localPosition = weaponInUse.weaponTransform.localPosition;
             weapon.transform.localRotation = weaponInUse.weaponTransform.localRotation;
+
+            swingTimer = weaponInUse.GetSwingTimer();
         }
 
         private GameObject RequestDominantHand() {
@@ -99,22 +101,30 @@ namespace RPG.Characters {
 
         // TODO need refactoring
         private void OnMouseClick(RaycastHit raycastHit, int layerHit) {
-            if (!isAttacking) {
-                isAttacking = true;
-                // TODO switch to coroutine, consider attack speed instead of attack delay
-                InvokeRepeating("Attack", 0f, attackTimer);
 
-                //if (Time.time - lastHitTime > swingTimer) {
-                //    Attack();
-                //    lastHitTime = Time.time;
-                //}
+            // Will also keep firing when mouse is held down, but with the swingTimer delay --- no rapid fire
+            if (Time.time - lastHitTime > swingTimer) {
+                Attack();
+                lastHitTime = Time.time;
+            }
 
-            }
-            else if (isAttacking) {
-                // TODO only attack while mouse is down, currently cannot cancel your attacking
-                CancelInvoke("Attack");
-                isAttacking = false;
-            }
+
+            //if (!isAttacking) {
+            //    isAttacking = true;
+            //    // TODO switch to coroutine, consider attack speed instead of attack delay
+            //    InvokeRepeating("Attack", 0f, attackTimer);
+
+            //    //if (Time.time - lastHitTime > swingTimer) {
+            //    //    Attack();
+            //    //    lastHitTime = Time.time;
+            //    //}
+
+            //}
+            //else if (isAttacking) {
+            //    // TODO only attack while mouse is down, currently cannot cancel your attacking
+            //    CancelInvoke("Attack");
+            //    isAttacking = false;
+            //}
 
 
             //switch (layerHit) {
@@ -167,7 +177,7 @@ namespace RPG.Characters {
             mousePos.z = 0;
             Vector3 playerToMouse = (mousePos - projectileSocket.transform.position).normalized;
 
-
+            // TODO make const
             anim.SetTrigger("isAttacking");
 
 

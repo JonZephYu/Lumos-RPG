@@ -10,6 +10,10 @@ namespace RPG.Weapons {
 
         [SerializeField] GameObject weaponPrefab;
         [SerializeField] AnimationClip attackAnimation;
+        [SerializeField] float swingTimer = 1f;
+
+        // TODO link weapon to specific projectile, instead of on player
+        //[SerializeField] GameObject projectilePrefab;
 
         public GameObject GetWeaponPrefab() {
             return weaponPrefab;
@@ -23,9 +27,15 @@ namespace RPG.Weapons {
             return attackAnimation;
         }
 
+        public float GetSwingTimer() {
+            return swingTimer;
+        }
+        
         // Removing animation events so asset packs cannot cause crashes
         private void ClearAnimationEvents() {
             attackAnimation.events = new AnimationEvent[0];
         }
+
+
     }
 }
