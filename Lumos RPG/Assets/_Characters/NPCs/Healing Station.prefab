@@ -657,6 +657,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1504077583217594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4269585137030538}
+  - component: {fileID: 114949406974785200}
+  m_Layer: 0
+  m_Name: Audio Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1525963241111196
 GameObject:
   m_ObjectHideFlags: 1
@@ -1660,6 +1676,19 @@ Transform:
   m_Father: {fileID: 4250378997726098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4269585137030538
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504077583217594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4858781628390718}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4291924206779716
 Transform:
   m_ObjectHideFlags: 1
@@ -2229,7 +2258,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996203561643864}
   m_LocalRotation: {x: -0, y: 0.9541275, z: -0, w: 0.2994009}
-  m_LocalPosition: {x: -45.87539, y: 0, z: -31.74833}
+  m_LocalPosition: {x: -3.637024, y: 0, z: 10.188995}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4931778734612266}
@@ -2237,6 +2266,7 @@ Transform:
   - {fileID: 4622518880792666}
   - {fileID: 4073726465210070}
   - {fileID: 4774435004135850}
+  - {fileID: 4269585137030538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 145.15701, z: 0}
@@ -2614,13 +2644,29 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 4
   m_AnimSpeedMultiplier: 5
   m_GroundCheckDistance: 1
+--- !u!114 &114949406974785200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504077583217594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b484c8bfced4043afe6c120f5001d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 5fc88b72f32ea944682b63170a6b4f61, type: 3}
+  layerFilter: 9
+  triggerRadius: 4
+  isOneTimeOnly: 1
+  hasPlayed: 0
 --- !u!136 &136222340189461536
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996203561643864}
-  m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
