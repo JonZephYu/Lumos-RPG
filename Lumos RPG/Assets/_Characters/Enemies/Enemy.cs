@@ -28,6 +28,8 @@ namespace RPG.Characters {
         private AICharacterControl aiCharacterControl = null;
 
 
+        // TODO in future, perhaps only load enemies when within certain range/use some kind of culling.
+
         // Use this for initialization
         void Start() {
             player = GameObject.FindGameObjectWithTag("Player");
