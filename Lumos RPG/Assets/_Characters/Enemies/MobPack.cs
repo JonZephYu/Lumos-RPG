@@ -38,7 +38,6 @@ public class MobPack : MonoBehaviour {
         }
 
 
-        throw new NotImplementedException();
     }
 
     private void OnDrawGizmos() {
