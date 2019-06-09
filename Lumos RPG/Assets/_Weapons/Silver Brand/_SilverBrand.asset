@@ -19,5 +19,5 @@ MonoBehaviour:
     type: 2}
   attackAnimation: {fileID: 7400000, guid: 81bc3bfb0da71d74fa951a8fe7833e6d, type: 2}
   swingTimer: 0.5
-  projectileLifetime: 0.1
+  projectileLifetime: 0.2
   projectileSpeed: 20

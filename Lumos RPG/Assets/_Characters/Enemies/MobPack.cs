@@ -17,7 +17,7 @@ public class MobPack : MonoBehaviour {
     private void Awake() {
         // Loop through children and turn off
         foreach (Transform child in transform) {
-            Debug.Log(child + " was turned off");
+            //Debug.Log(child + " was turned off");
             child.transform.gameObject.SetActive(false);
         }
 
@@ -33,7 +33,7 @@ public class MobPack : MonoBehaviour {
 
     private void ActivateChildren() {
         foreach (Transform child in transform) {
-            Debug.Log(child + " was activated");
+            //Debug.Log(child + " was activated");
             child.transform.gameObject.SetActive(true);
         }
 

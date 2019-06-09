@@ -155,7 +155,7 @@ namespace RPG.Characters {
         private void Attack() {
             GameObject newProjectile = Instantiate(projectilePrefab, projectileSocket.transform.position, Quaternion.identity);
             var projectileComponent = newProjectile.GetComponent<Projectile>();
-            projectileComponent.setDamage(damagePerShot);
+            projectileComponent.setDamage(damagePerShot + attackStat);
 
             // TODO possibly modify projectile via player stats/buffs/etc
 
